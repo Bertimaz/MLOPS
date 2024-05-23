@@ -1,0 +1,11 @@
+Módulo Detecção de Faces, de Reconhecimento Facial e de Detecção de Vivacidade para o Projeto de Computer Vision do MBA em Data Science da FIAP 
+
+Temos duas funções de interface criada:
+
+* app.py:
+O módulo propriamente dito, ondé é realizado a Detecção de Faces, o Reconhecimento Facial e a Detecção de Vivacidade.
+
+
+* add_user.py:
+Onde é possível cadastrar um novo usuário fornecendo o seu nome 
+
