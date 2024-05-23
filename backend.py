@@ -12,9 +12,9 @@ import face_module.identification.face_id
 app = Flask(__name__)
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-id_recognition_model_path = os.path.join(current_dir, f"face_module\identification\modelos\id_recognition_model.xml")
-landmark_model_path = os.path.join(current_dir, "face_module\liveness\shape_predictor_68_face_landmarks.dat")
-labels_path = os.path.join(current_dir, "face_module\identification\labels_ids.json")
+id_recognition_model_path = os.path.join(current_dir, f"face_module/identification/modelos/id_recognition_model.xml")
+landmark_model_path = os.path.join(current_dir, "face_module/liveness/shape_predictor_68_face_landmarks.dat")
+labels_path = os.path.join(current_dir, "face_module/identification/labels_ids.json")
 print(id_recognition_model_path)
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()

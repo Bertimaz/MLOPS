@@ -24,7 +24,8 @@ def alinha_face(imagem,dets,tamanho=None, return_face=True):
     #Configura lista para retornar
     faces=[]
     # Carrega o classificador de marcos faciais
-    classificador_68_path = r"C:\Users\alber\Documents\Projetos - Dados\computer_vision\Notebooks\files\classificadores\shape_predictor_68_face_landmarks.dat"
+    classificador_68_path = os.path.join(current_dir, "face_module/liveness/shape_predictor_68_face_landmarks.dat")
+    #classificador_68_path = r"C:/Users/alber\Documents\Projetos - Dados\computer_vision\Notebooks\files\classificadores\shape_predictor_68_face_landmarks.dat"
     # detector_face_dlib = dlib.get_frontal_face_detector()
     classificador_dlib_68 = dlib.shape_predictor(classificador_68_path)
 
