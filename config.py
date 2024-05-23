@@ -1,6 +1,6 @@
 import os
-dev=True
-prod=False
+dev=False
+prod=True
 
 if dev:
     # Caminhos de modelos

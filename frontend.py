@@ -13,9 +13,11 @@ option = st.selectbox('Escolha um método:', ('Vídeo', 'Webcam'))
 if config.dev:
     # URL de produção
     url = "http://<YOUR-AWS-IP>:5000/identify"
+    
 else:
     # Url de desenvolvimento
     url='http://127.0.0.1:5000/identify'
+    url = "http://18.226.169.27:5050/identify" 
 
 if option == 'Vídeo':
     # Carrega o vidoe na variavel uploaded_file
