@@ -39,9 +39,13 @@ Thumbs.db
 *.ipynb
 *.pdf
 *.html
-*.mp4
+#*.mp4
 notebooks/
 
 uploads/
 *.txt
 config.py
+
+
+uploads/*.mp4
+!uploads/live.mp4
