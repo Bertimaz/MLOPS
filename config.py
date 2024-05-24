@@ -1,5 +1,5 @@
 import os
-dev=True
+dev=False
 
 
 if dev:
