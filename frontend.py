@@ -1,8 +1,8 @@
 import streamlit as st
-import cv2
+#import cv2
 import numpy as np
 import requests
-from streamlit_webrtc import webrtc_streamer, VideoTransformerBase, WebRtcMode
+#from streamlit_webrtc import webrtc_streamer, VideoTransformerBase, WebRtcMode
 import json
 import config
 
@@ -31,7 +31,7 @@ if st.button('test'):
 st.title("Face Recognition FIAP 4DTSR")
 
 # option = st.selectbox('Escolha um método:', ('Vídeo', 'Webcam'))
-option = st.selectbox('Escolha um método:', ('Vídeo'))
+option = st.selectbox('Escolha um método:', ('Vídeo','Webcam (Indisponível))
 
 if option == 'Vídeo':
     # Carrega o vidoe na variavel uploaded_file
@@ -82,4 +82,4 @@ if option == 'Vídeo':
 
 #         FRAME_WINDOW.image(frame_rgb)
 
-    cap.release()
+#   cap.release()
