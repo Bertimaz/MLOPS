@@ -10,19 +10,20 @@ if not config.dev:
     # URL de produção
     url = "http://18.226.169.27:5000/identify" 
     url_test = "http://18.226.169.27:5000/test" 
-    file_path=os.path.join(current_dir, f"uploads/live.mp4")
+    file_path=os.path.join(current_dir, f"uploads/temp_file")
    
 else:
     # Url de desenvolvimento
     url='http://127.0.0.1:5000/identify'
     url_test='http://127.0.0.1:5000/test'
-    file_path=os.path.join(current_dir, f"uploads\live.mp4")
+    file_path=os.path.join(current_dir, f"uploads/temp_file")
 
 # Testando Status do Servidor
 print('Testando Status do Servidor')
 response=requests.get(url_test)
 json_data=response.json()
 json_string=json.dumps(json_data)
+print(json_data)
 if json_data['status']==50:
     print('Servidor está online')
 else:
