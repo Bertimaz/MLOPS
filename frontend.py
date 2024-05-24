@@ -6,9 +6,7 @@ from streamlit_webrtc import webrtc_streamer, VideoTransformerBase, WebRtcMode
 import json
 import config
 
-st.title("Face Recognition FIAP 4DTSR")
 
-option = st.selectbox('Escolha um método:', ('Vídeo', 'Webcam'))
 
 if not config.dev:
     # URL de produção
@@ -17,7 +15,29 @@ if not config.dev:
 else:
     # Url de desenvolvimento
     url='http://127.0.0.1:5000/identify'
-    
+
+def test_connection():
+    if not config.dev:
+    # URL de produção
+        url_test = "http://18.226.169.27:5000/test" 
+    else:
+        # Url de desenvolvimento
+        url_test='http://127.0.0.1:5000/test'
+  
+    response=requests.get(url_test)
+
+    json_data=response.json()
+    json_string=json.dumps(json_data)
+    st.write(json_string)
+     
+
+if st.button('test'):
+    test_connection()
+
+st.title("Face Recognition FIAP 4DTSR")
+
+option = st.selectbox('Escolha um método:', ('Vídeo', 'Webcam'))
+
 if option == 'Vídeo':
     # Carrega o vidoe na variavel uploaded_file
     uploaded_file = st.file_uploader("Escolha um arquivo de vídeo...", type=["mp4", "avi", "mov"])
@@ -32,8 +52,8 @@ if option == 'Vídeo':
         # Faz o request
         response = requests.post(url, data=video_bytes, verify=False)
         # Escreve na tela a identificacao
-        st.write(response.content)
-
+        
+        st.write(response)
         json_data=response.json()
         json_string=json.dumps(json_data)
         st.write(json_string)
