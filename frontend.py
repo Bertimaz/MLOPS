@@ -47,7 +47,6 @@ if option == 'Vídeo':
         response = requests.post(url, data=video_bytes, verify=False)
         # Escreve na tela a identificacao
         
-        st.write(response['id'])
         json_data=response.json()
         json_string=json.dumps(json_data)
         st.write(json_string)
