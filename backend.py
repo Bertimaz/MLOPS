@@ -30,7 +30,10 @@ liveness_images = {}
 image_threshold = 24
 app.config['UPLOAD_FOLDER'] = 'uploads'
 
-
+@app.route('/test',methods=['GET'])
+def test():
+    response={'Status':40, 'Message':'OK'}
+    return jsonify(response)
 
 
 def upload(video_bytes):
