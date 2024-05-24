@@ -129,7 +129,7 @@ def identify():
         return jsonify(results)
 
     except Exception as e:
-        log.warning(f'Erro: {e}')
+        log.info(f'Erro: {e}')
         print(f'erro: {e}')
         response={'Status':'Unknown Error'}
         return jsonify(response)
