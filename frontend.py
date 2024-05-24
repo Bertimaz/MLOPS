@@ -31,7 +31,7 @@ if st.button('test'):
 st.title("Face Recognition FIAP 4DTSR")
 
 # option = st.selectbox('Escolha um método:', ('Vídeo', 'Webcam'))
-option = st.selectbox('Escolha um método:', ('Vídeo','Webcam (Indisponível))
+option = st.selectbox('Escolha um método:', ('Vídeo','Webcam (Indisponível)')
 
 if option == 'Vídeo':
     # Carrega o vidoe na variavel uploaded_file
