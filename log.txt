@@ -62,3 +62,9 @@
 2024-05-23 23:56:19,034 - INFO -  * Restarting with watchdog (windowsapi)
 2024-05-23 23:56:22,309 - WARNING -  * Debugger is active!
 2024-05-23 23:56:22,313 - INFO -  * Debugger PIN: 263-448-115
+2024-05-23 23:56:36,475 - INFO - Iniciando identificação
+2024-05-23 23:56:36,477 - INFO - Salvando Video
+2024-05-23 23:56:36,528 - INFO - Obtendo Arquivo
+2024-05-23 23:56:36,528 - INFO - Iterando video
+2024-05-23 23:56:36,608 - WARNING - Erro: Unable to open c:\Users\alber\Documents\Projetos - Dados\MLOPS\face_module\face_module/liveness/shape_predictor_68_face_landmarks.dat
+2024-05-23 23:56:36,613 - INFO - 127.0.0.1 - - [23/May/2024 23:56:36] "POST /identify HTTP/1.1" 200 -
