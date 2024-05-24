@@ -11,21 +11,15 @@ import config
 if not config.dev:
     # URL de produção
     url = "http://18.226.169.27:5000/identify" 
+    url_test = "http://18.226.169.27:5000/test" 
    
 else:
     # Url de desenvolvimento
     url='http://127.0.0.1:5000/identify'
+    url_test='http://127.0.0.1:5000/test'
 
 def test_connection():
-    if not config.dev:
-    # URL de produção
-        url_test = "http://18.226.169.27:5000/test" 
-    else:
-        # Url de desenvolvimento
-        url_test='http://127.0.0.1:5000/test'
-  
     response=requests.get(url_test)
-
     json_data=response.json()
     json_string=json.dumps(json_data)
     st.write(json_string)
@@ -53,7 +47,7 @@ if option == 'Vídeo':
         response = requests.post(url, data=video_bytes, verify=False)
         # Escreve na tela a identificacao
         
-        st.write(response)
+        st.write(response['id'])
         json_data=response.json()
         json_string=json.dumps(json_data)
         st.write(json_string)

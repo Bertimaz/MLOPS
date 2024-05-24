@@ -4,6 +4,14 @@ import dlib
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+import config as cn
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if cn.dev:
+    classificador_68_path = os.path.join(current_dir, "liveness\shape_predictor_68_face_landmarks.dat")
+else:
+    classificador_68_path = os.path.join(current_dir, "liveness/shape_predictor_68_face_landmarks.dat")
+
 
 
 
@@ -22,11 +30,11 @@ def alinha_face(imagem,dets,tamanho=None, return_face=True):
     Se return_face for True retornara a lista com as informações da imagem
     Se return_face for False, imprime a foto original, o ROI e a imagem alinhada da ultima face encontrada e retorna None.
     """
-    current_dir = os.path.dirname(os.path.abspath(__file__))
+    
     #Configura lista para retornar
     faces=[]
     # Carrega o classificador de marcos faciais
-    classificador_68_path = os.path.join(current_dir, "face_module/liveness/shape_predictor_68_face_landmarks.dat")
+    
     #classificador_68_path = r"C:/Users/alber\Documents\Projetos - Dados\computer_vision\Notebooks\files\classificadores\shape_predictor_68_face_landmarks.dat"
     # detector_face_dlib = dlib.get_frontal_face_detector()
     classificador_dlib_68 = dlib.shape_predictor(classificador_68_path)
