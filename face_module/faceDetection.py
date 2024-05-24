@@ -3,6 +3,7 @@ import cv2
 import dlib
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
 
 
@@ -21,6 +22,7 @@ def alinha_face(imagem,dets,tamanho=None, return_face=True):
     Se return_face for True retornara a lista com as informações da imagem
     Se return_face for False, imprime a foto original, o ROI e a imagem alinhada da ultima face encontrada e retorna None.
     """
+    current_dir = os.path.dirname(os.path.abspath(__file__))
     #Configura lista para retornar
     faces=[]
     # Carrega o classificador de marcos faciais
