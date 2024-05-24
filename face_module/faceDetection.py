@@ -99,7 +99,8 @@ def numero_de_faces(imagem):
     tem_face(imagem)
 
     """
-    classificador_68_path = r"C:\Users\alber\Documents\Projetos - Dados\computer_vision\Notebooks\files\classificadores\shape_predictor_68_face_landmarks.dat"
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    classificador_68_path = os.path.join(current_dir, "face_module/liveness/shape_predictor_68_face_landmarks.dat")
     detector_face_dlib = dlib.get_frontal_face_detector()
 
     imagem = cv2.cvtColor(imagem, cv2.COLOR_BGR2RGB)
