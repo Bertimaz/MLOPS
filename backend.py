@@ -170,7 +170,7 @@ def index():
 if __name__ == '__main__':
     if cn.dev:
         print('DEV')
-        app.run(debug=True)
+        app.run(debug=True,port=5000)
     else:
         app.run(host='0.0.0.0', port=5000)
     
