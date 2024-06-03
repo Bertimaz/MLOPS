@@ -7,7 +7,7 @@ import json
 import config
 
 
-
+#Configurando URLs
 if not config.dev:
     # URL de produção
     url = "http://18.226.169.27:5000/identify" 
@@ -15,26 +15,30 @@ if not config.dev:
    
 else:
     # Url de desenvolvimento
-    url='http://127.0.0.1:5000/identify'
-    url_test='http://127.0.0.1:5000/test'
+    url=config.url
+    url_test=config.url_test
 
+#Função para testar conexão
 def test_connection():
     response=requests.get(url_test)
     json_data=response.json()
     json_string=json.dumps(json_data)
     st.write(json_string)
      
-
+#Botão para testar conexão
 if st.button('test'):
     test_connection()
 
+#Titulo da página
 st.title("Face Recognition FIAP 4DTSR")
 
+#Opções
 # option = st.selectbox('Escolha um método:', ('Vídeo', 'Webcam'))
 option = st.selectbox('Escolha um método:', ('Vídeo','Webcam (Indisponível)'))
 
+# Se for via upload de vídeo
 if option == 'Vídeo':
-    # Carrega o vidoe na variavel uploaded_file
+    # Carrega o video na variavel uploaded_file
     uploaded_file = st.file_uploader("Escolha um arquivo de vídeo...", type=["mp4", "avi", "mov"])
     # Se houver video
     if uploaded_file is not None:
@@ -43,17 +47,16 @@ if option == 'Vídeo':
         #Carrega o video em bytes 
         video_bytes = uploaded_file.read() 
         st.write("Classificando...")
-
-        # Faz o request
+        # Faz o request para a API de Identificação
         response = requests.post(url, data=video_bytes, verify=False)
-        # Escreve na tela a identificacao
-        
+        #Transforma a response em String
         json_data=response.json()
         json_string=json.dumps(json_data)
+        # Escreve na tela a identificacao
         st.write(json_string)
 
-
-
+##Em desenvolvimento
+## Se for via Webcam 
 # elif option == 'Webcam':
 #     st.write("Webcam will start below. Please allow access if prompted.")
 #     run = st.checkbox('Start Webcam')
