@@ -17,7 +17,7 @@ else:
 
 def alinha_face(imagem,dets,tamanho=None, return_face=True):
     """
-    Alinha a face de uma imagem. Só funciona se tiver apenas 1 face
+    Alinha e recorta o roi da imagem de uma face. Só funciona se tiver apenas 1 face
     Argumentos:
     imagem-> imagem em cinza
     dets->resultado de detector(gray)
